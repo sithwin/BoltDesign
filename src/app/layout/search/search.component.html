@@ -1,0 +1,90 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Search'" [icon]="'fa-search'"></app-page-header>
+
+    <div class="row">
+        <div class="col-lg-6">
+
+            <form role="form">
+                <fieldset class="form-group">
+                    <label>Policy Owner Name :</label>
+                    <input  type="text" [(ngModel)]="searchParam.pol_owner_name" [ngModelOptions]="{standalone: true}"  class="form-control"/>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label>Owner ID :</label>
+                    <input  type="text"  [(ngModel)]="searchParam.pol_owner_id" [ngModelOptions]="{standalone: true}" class="form-control"/>
+                </fieldset>
+
+            </form>
+
+        </div>
+        <div class="col-lg-6">
+            <form role="form">
+                <div class="form-group">
+                    <label>Channel :</label>
+                    <select [(ngModel)]="searchParam.pol_channel" [ngModelOptions]="{standalone: true}"  class="form-control">
+                        <option>Agency</option>
+                        <option>DBS</option>
+                        <option>Broker</option>
+                        <option>International Broker</option>
+                        <option>Banca</option>
+                    </select>
+                </div>
+
+                <fieldset class="form-group">
+                    <label>Policy No :</label>
+                    <input  type="text"  [(ngModel)]="searchParam.pol_num" [ngModelOptions]="{standalone: true}" class="form-control"/>
+                </fieldset>
+                <button (click)="Search()" class="btn btn-secondary">Search</button>
+
+            </form>
+
+        </div>
+    </div>
+    &nbsp;
+    <div class="card-header">Search Result</div>
+    <div class="toolbar" role="toolbar" style="margin: 0;">
+        <div class="btn-group pull-left">
+                <button 
+                    [ngClass]="{'disabled': (currentIndex == 1 || pageNumber == 0)}" 
+                    class="btn btn-primary next" 
+                    (click)="prevPage()"
+                    href="#">
+                    <span><<</span>
+                </button>
+                <button *ngFor="let page of pagesIndex" 
+                    [ngClass]="{'active': (currentIndex == page)}" 
+                    class="btn btn-primary" 
+                    (click)="setPage(page)"
+                    href="#">{{page}}</button>
+                <button 
+                    [ngClass]="{'disabled': (currentIndex == pageNumber || pageNumber == 0)}" 
+                    class="btn btn-primary next" 
+                    (click)="nextPage()"
+                    href="#">
+                    <span>>></span>
+                </button>
+        </div>
+    </div>
+    <table class="table table-bordered table-condensed ">
+        <thead>
+            <th>Policy No</th>
+            <th>Policy Owner</th>
+            <th>LA Name</th>
+            <th>Policy Type</th>
+            <th>Channel</th>
+            <th>Sum Insured</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of items">
+                <td>{{ item.pol_num }}</td>
+                <td>{{ item.pol_owner_name }}</td>
+                <td>{{ item.pol_la_name }}</td>
+                <td>{{ item.pol_Type }}</td>
+                <td>{{ item.pol_channel }}</td>
+                <td>{{ item.pol_sum_insured }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

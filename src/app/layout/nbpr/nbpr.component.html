@@ -1,0 +1,92 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'NBPR'" [icon]="'fa-edit'"></app-page-header>
+    <div>
+        <h2>Policy No : 2499007775</h2>
+        &nbsp;
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+
+            <form role="form">
+                <fieldset class="form-group">
+                    <label>LA Name : TAN AH MING</label>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label>Primary UW : Md Dalvi</label>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label>First NBPR : 1-Sep-2018</label>
+                </fieldset>
+            </form>
+
+        </div>
+        <div class="col-lg-4">
+
+            <form role="form">
+                <fieldset class="form-group">
+                    <label>Seller Name : Jenny</label>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label>Primary CCM : IVY Cheng</label>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label>Last NBPR : 2-Sep-2018</label>
+                </fieldset>
+
+            </form>
+
+        </div>
+        <div class="col-lg-4">
+
+            <form role="form">
+                <fieldset class="form-group">
+                    <label>Channel : DBS</label>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label></label>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label>Count of NBPR : 3</label>
+                </fieldset>
+            </form>
+
+        </div>
+    </div>
+    &nbsp;
+    <div class="row">
+        <div class="col-lg-6">
+                <div class="form-group">
+                        <label>NBPR Date:</label>
+                        <div class="input-group datepicker-input">
+                            <input class="form-control" placeholder="yyyy-mm-dd"
+                                name="dp" >
+                            <button class="input-group-addon" (click)="d.toggle()" type="button">
+                                <!-- <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/> -->
+                                <span class="fa fa-calendar"></span>
+                            </button>
+                        </div>
+                    </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <form role="form">
+                <fieldset class="form-group">
+                    <label>NBPR Type:</label>
+                    <select class="form-control">
+                        <option>Tentative</option>
+                        <option>Formal</option>
+                    </select>
+                </fieldset>
+                <a [routerLink]="['/result']" [routerLinkActive]="['router-link-active']"><button type="submit" class="btn btn-secondary">Save</button></a>
+            </form>
+        </div>
+    </div>       
+    <!-- /.row -->
+</div>

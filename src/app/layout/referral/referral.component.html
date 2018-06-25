@@ -1,0 +1,75 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Referral'" [icon]="'fa-edit'"></app-page-header>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <h4>Referral</h4>
+            <div class="form-group">
+                <label>Type :</label>
+                <select class="form-control">
+                    <option>Compliance</option>
+                    <option>Regional</option>
+                    <option>CUW</option>
+                    <option>Reinsurer</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Start Date:</label>
+                <div class="input-group datepicker-input">
+                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp">
+                    <button class="input-group-addon" (click)="d.toggle()" type="button">
+                        <!-- <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/> -->
+                        <span class="fa fa-calendar"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>End Date:</label>
+                <div class="input-group datepicker-input">
+                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp">
+                    <button class="input-group-addon" (click)="d.toggle()" type="button">
+                        <!-- <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/> -->
+                        <span class="fa fa-calendar"></span>
+                    </button>
+                </div>
+                <br>
+                <a [routerLink]="['/result']" [routerLinkActive]="['router-link-active']"><button type="submit" class="btn btn-secondary">Save</button></a>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <h4>Reinsurance</h4>
+            <div class="form-group">
+                <label>Channel:</label>
+                <select class="form-control">
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>FAC/Non-FAC:</label>
+                <select class="form-control">
+                    <option>FAC</option>
+                    <option>Non-FAC</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Sub Category:</label>
+                <select class="form-control">
+                    <option>ABL >30M</option>
+                    <option>Age</option>
+                    <option>Medical Opinion</option>
+                    <option>Others</option>
+                    <option>PEP</option>
+                    <option>No Retension</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <fieldset class="form-group">
+                    <label>Referral ID:</label>
+                    <input class="form-control">
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+</div>
